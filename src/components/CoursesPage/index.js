@@ -1,12 +1,12 @@
 import CourseList from 'components/CourseList';
 import './styles.scss';
 
-function Layout() {
+function CoursesPage() {
   return (
-    <div className="layout">
+    <div className="courses-page">
       <CourseList />
     </div>
   );
 }
 
-export default Layout;
+export default CoursesPage;
