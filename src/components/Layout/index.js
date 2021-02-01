@@ -1,17 +1,11 @@
-import { useEffect } from 'react';
-import { Provider, useDispatch } from 'react-redux';
-import { requestCourses } from 'store/courses/actions';
+import CourseList from 'components/CourseList';
 import './styles.scss';
 
-function Layout({ store }) {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(requestCourses());
-  });
+function Layout() {
   return (
-    <Provider store={store}>
-      <div className="layout">Layout</div>
-    </Provider>
+    <div className="layout">
+      <CourseList />
+    </div>
   );
 }
 

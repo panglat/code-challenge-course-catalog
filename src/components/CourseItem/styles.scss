@@ -1,0 +1,25 @@
+.course-item {
+  display: flex;
+
+  &__image {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 10px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 100%;
+    border-bottom: 1px solid grey;
+  }
+
+  &__instructor-name {
+    font-size: 1.5rem;
+  }
+
+  &__course-name {
+    font-size: 0.9rem;
+  }
+}

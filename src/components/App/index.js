@@ -1,16 +1,13 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { requestCourses } from 'store/courses/actions';
+import Layout from 'components/Layout';
 
 import './styles.scss';
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(requestCourses());
-  });
-
-  return <div className="App">App</div>;
+  return (
+    <div className="App">
+      <Layout />
+    </div>
+  );
 }
 
 export default App;
