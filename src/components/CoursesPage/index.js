@@ -4,7 +4,9 @@ import './styles.scss';
 function CoursesPage() {
   return (
     <div className="courses-page">
-      <CourseList />
+      <div className="courses-page__course-list">
+        <CourseList />
+      </div>
     </div>
   );
 }
