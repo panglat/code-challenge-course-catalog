@@ -1,18 +1,30 @@
 .course-item {
   display: flex;
 
-  &__image {
+  &__instructor-image {
     width: 3rem;
     height: 3rem;
     margin-right: 10px;
   }
 
-  &__description {
+  &__course-description {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     flex-grow: 1;
     border-bottom: 1px solid grey;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    &-favorite-img {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0 0.75rem;
+    }
   }
 
   &__instructor-name {
