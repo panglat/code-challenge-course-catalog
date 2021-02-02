@@ -1,10 +1,9 @@
-import api from 'api/api01.js';
+import api, { TEST_EMAIL } from 'api/api01.js';
 import qs from 'qs';
 
-// eslint-disable-next-line import/prefer-default-export
 export const getCourses = async (
   parameters = {
-    email: 'email@example.com',
+    email: TEST_EMAIL,
     limit: 10,
     offset: 0,
   }

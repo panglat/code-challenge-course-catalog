@@ -5,4 +5,6 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
+export const TEST_EMAIL = 'email@example.com';
+
 export default api;

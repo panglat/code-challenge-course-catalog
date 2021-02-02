@@ -1,7 +1,8 @@
 import starFilledImg from 'assets/svg/star-filled.svg';
+import starThinImg from 'assets/svg/star-thin.svg';
 import './styles.scss';
 
-function CourseItem({ course }) {
+function CourseItem({ course, onFavoriteClick }) {
   return (
     <div className="course-item">
       <img
@@ -16,11 +17,16 @@ function CourseItem({ course }) {
           </div>
           <div className="course-item__course-name">{course.title}</div>
         </div>
-        <img
-          className="course-item__course-description-favorite-img"
-          alt="Favorite"
-          src={starFilledImg}
-        />
+        <button
+          className="course-item__course-description-favorite-button"
+          onClick={() => onFavoriteClick(course)}
+        >
+          <img
+            className="course-item__course-description-favorite-button-img"
+            alt="Favorite"
+            src={course.favorite ? starFilledImg : starThinImg}
+          />
+        </button>
       </div>
     </div>
   );
