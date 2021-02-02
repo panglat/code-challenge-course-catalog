@@ -27,7 +27,7 @@ function CourseList({ store }) {
       {courses &&
         courses.map((course) => (
           <CourseItem
-            key={courses.id}
+            key={course.id}
             course={course}
             onFavoriteClick={handleFavoriteClick}
           />
