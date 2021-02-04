@@ -1,8 +1,7 @@
-/**
- * @file Manages Users Redux reducer.
- * @module redux-store/users/Reducer
- */
-
+import {
+  FAVORITE_SET_SUCCEEDED,
+  FAVORITE_UNSET_SUCCEEDED,
+} from 'store/favorite/actionTypes';
 import {
   COURSES_FETCH_REQUESTED,
   COURSES_FETCH_SUCCEEDED,
@@ -37,6 +36,30 @@ export default function reducer(state = initialState, action) {
         loading: false,
         error: action.payload.error,
       };
+
+    case FAVORITE_SET_SUCCEEDED: {
+      const courseId = action.payload.response.course_id;
+      return {
+        ...state,
+        courseList: state.courseList
+          ? state.courseList.map((course) =>
+              course.id !== courseId ? course : { ...course, favorite: true }
+            )
+          : state.courseList,
+      };
+    }
+
+    case FAVORITE_UNSET_SUCCEEDED: {
+      const courseId = action.payload.response.course_id;
+      return {
+        ...state,
+        courseList: state.courseList
+          ? state.courseList.map((course) =>
+              course.id !== courseId ? course : { ...course, favorite: false }
+            )
+          : state.courseList,
+      };
+    }
 
     default:
       return state;
